@@ -348,16 +348,15 @@
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Download current page as an .html file
+    
+    // Download my resume PDF
     document.getElementById('downloadBtn').addEventListener('click', () => {
-      const doctype = '<!DOCTYPE html>\n';
-      const source = doctype + document.documentElement.outerHTML;
-      const blob = new Blob([source], { type: 'text/html' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url; a.download = 'vikrant-portfolio.html';
-      document.body.appendChild(a); a.click();
-      a.remove(); URL.revokeObjectURL(url);
+    const a = document.createElement('a');
+    a.href = 'resume.pdf'; // your PDF file path
+    a.download = 'Vikrant_Sharma_Resume.pdf';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
     });
   </script>
 </body>
